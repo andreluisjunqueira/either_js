@@ -1,0 +1,28 @@
+{
+  "name": "either_js",
+  "version": "1.0.0",
+  "description": "This package is created to handle returns and errors in a better way, using functional concept Either.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "either",
+    "eitherjs",
+    "either_js"
+  ],
+  "author": "André Junqueira",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreluisjunqueira/either_js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andreluisjunqueira/either_js/issues"
+  },
+  "homepage": "https://github.com/andreluisjunqueira/either_js#readme",
+  "dependencies": {
+    "typescript": "^5.0.3"
+  }
+}
