@@ -1,5 +1,5 @@
 {
-  "name": "either_js",
+  "name": "@andrejunqueira/either_js",
   "version": "1.0.0",
   "description": "This package is created to handle returns and errors in a better way, using functional concept Either.",
   "main": "dist/index.js",
