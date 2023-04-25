@@ -13,8 +13,23 @@ class Right {
     isRight() {
         return true;
     }
-    fold(leftFn, rightFn) {
+    fold(_leftFn, rightFn) {
         return rightFn(this._value);
+    }
+    getOrElse(_elseFn) {
+        return this._value;
+    }
+    getOrNull() {
+        return this._value;
+    }
+    getOrDefault(_elseFn) {
+        return this._value;
+    }
+    map(predicate) {
+        return new Right(null, predicate(this._value));
+    }
+    mapError(_) {
+        return this._value;
     }
 }
 exports.Right = Right;

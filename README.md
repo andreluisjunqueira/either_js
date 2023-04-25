@@ -8,6 +8,8 @@
 import { left, right } from '@andrejunqueira/either_js';
 
 async function getUser() {
+    //You can return left or right to be hanled
+
     try {
         const response = await axios.get('https://apiurl.com')
 
@@ -24,7 +26,9 @@ async function getUser() {
     }
 }
 
-
+```
+### fold
+```js
 /// USAGE
 const myUser = await getUser();
 
@@ -40,8 +44,10 @@ myUser.fold(whenLeft, whenRight);
 
 //OR
 
-myUser.fold((error) => console.log(error),
-    (user) => console.log(user));
+myUser.fold(
+    (error) => console.log(error),
+    (success) => console.log(success)
+);
 
 
 
@@ -55,6 +61,81 @@ if(myUser.isRight()){
     //Do something
 }
 
+
+```
+### getOrElse
+
+```ts
+const myUser = await getUser();
+
+const successValue = myUser.getOrElse((failure) => {
+    console.error('Failure + ', failure);
+});
+
+```
+### getOrNull
+
+```ts
+const myUser = await getUser();
+
+const successValue = myUser.getOrNull();
+
+console.log(successValue)
+//if something go wrong the successValue will be null
+```
+
+### getOrDefault
+
+```ts
+const myUser = await getUser();
+
+const successValue = myUser.getOrDefault('Default data !');
+
+console.log(successValue)
+//if something go wrong the successValue will be ["Default data !]"
+
+```
+### map
+
+```ts
+
+class User {
+    name;
+    constructor(name) {
+        this.name = name;
+    }
+
+    printName() {
+        console.log(this.name);
+    }
+}
+
+
+const myUser = await getUser();
+
+//the success value will be mapped to anything you return from it
+const value = myUser.map((value) => new User(value));
+
+//after to be mapped you can use any other methods like fold for example
+value.fold(
+    (error) => console.log(),
+    (user) => user.printName(),
+);
+```
+### mapError
+
+```ts
+const myUser = await getUser();
+
+//the same as map, but the error value will be mapped
+const value = myUser.mapError((value) => new Error(value));
+
+
+//after to be mapped you can use any other methods like fold for example
+value.fold(
+    (error) => console.log(error.message),
+    (success) => console.log(success),
+);
 
 ```
 

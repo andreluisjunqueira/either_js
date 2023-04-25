@@ -2,10 +2,13 @@
 # yarn lockfile v1
 
 
-"@andrejunqueira/either_js@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@andrejunqueira/either_js/-/either_js-1.0.0.tgz#c97b88bce9b4a9aff75d7a65d99ca0e4aaae25f2"
-  integrity sha512-a1rDMnSEX6FhoYWK/SKCRrGTnt9MJv0dy3DBmIvJLgyYPnXF7FGk13Q6fT40cLBq8IIHdp4BkqGHHPFCNIM83A==
+"@andrejunqueira/either_js@file:..":
+  version "1.0.1"
+  dependencies:
+    typescript "^5.0.3"
+
+"@andrejunqueira/either_js@file:/Users/andre.junqueira/workspace/either_js":
+  version "1.0.1"
   dependencies:
     typescript "^5.0.3"
 
